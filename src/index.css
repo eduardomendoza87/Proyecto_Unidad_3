@@ -1,0 +1,34 @@
+/* 1. Importaciones de Tailwind (Tu formato) */
+@import "tailwindcss";
+@import "tailwindcss/utilities";
+
+/* 2. Importar las fuentes de Google */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap');
+
+@theme {
+  /* == TIPOGRAFÍA == */
+  --fuente-textos: "Inter", sans-serif;       /* Fuente para párrafos, botones, etc. */
+  --fuente-titulos: "Playfair Display", serif; /* Fuente para H1, H2, etc. */
+
+  /* == PALETA DE COLORES == */
+  --color-principal: #FF4D00;       /* Naranja para botones y acentos */
+  --color-principal-hover: #FF4D00; /* Naranja oscuro para hover */
+  --color-fondo-oscuro: #111827;    /* Negro/Azul oscuro para el footer */
+  --color-fondo-claro: #F9FAFB;     /* Gris muy claro para fondo de página */
+  --color-blanco: #FFFFFF;         /* Blanco para tarjetas y contenido */
+  --color-texto-principal: #111827; /* Texto principal (casi negro) */
+  --color-texto-gris: #6B7280;     /* Texto secundario (descripciones) */
+}
+
+/* 3. Estilos base del body */
+body {
+  /* Aplicamos la fuente de TEXTOS por defecto y el fondo claro */
+  font-family: var(--fuente-textos);
+  background-color: var(--color-fondo-claro);
+  color: var(--color-texto-principal);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  /* Aplicamos la fuente de TÍTULOS a todos los encabezados */
+  font-family: var(--fuente-titulos);
+}
