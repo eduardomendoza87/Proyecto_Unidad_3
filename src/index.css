@@ -1,4 +1,3 @@
-/* 1. Importaciones de Tailwind (Tu formato) */
 @import "tailwindcss";
 @import "tailwindcss/utilities";
 
@@ -13,7 +12,7 @@
   /* == PALETA DE COLORES == */
   --color-principal: #FF4D00;       /* Naranja para botones y acentos */
   --color-principal-hover: #FF4D00; /* Naranja oscuro para hover */
-  --color-fondo-oscuro: #111827;    /* Negro/Azul oscuro para el footer */
+  --color-fondo-oscuro: #000000;    /* Negro/Azul oscuro para el footer */
   --color-fondo-claro: #F9FAFB;     /* Gris muy claro para fondo de página */
   --color-blanco: #FFFFFF;         /* Blanco para tarjetas y contenido */
   --color-texto-principal: #111827; /* Texto principal (casi negro) */
