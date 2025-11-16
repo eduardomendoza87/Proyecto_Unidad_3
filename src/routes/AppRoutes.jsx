@@ -8,6 +8,7 @@ import Home from '../pages/Home';
 import { Recursos } from '../pages/Resources';
 import Glosario from '../pages/subPages/glossary';
 import Creditos from '../pages/Credits';
+import Tema1 from '../pages/Tema1';
 
 const AppRoutes = () => {
     return(
@@ -19,6 +20,7 @@ const AppRoutes = () => {
             <Route path='/recursos' element={<Recursos/>}/>
             <Route path='/subPages/glosario' element={<Glosario/>}/>
             <Route path='/creditos' element={<Creditos/>}/>
+            <Route path='/tema/:slug' element={<Tema1/>}/>
             </Route>
         </Routes>
         </BrowserRouter>

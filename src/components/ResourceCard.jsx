@@ -4,9 +4,8 @@ import { Link } from 'react-router-dom';
 export function ResourceCard({ icon, title, description, tags, href }) {
   return (
     <div className="bg-blanco rounded-2xl shadow-lg p-6 flex flex-col transition-shadow hover:shadow-xl">
-      {/* 1. Icono (lo pasaremos como prop) */}
+      {/* 1. Icono  */}
       <div className="text-principal mb-4">
-        {/* El icono (ej. <Cog size={40} />) vendrá aquí */}
         {icon}
       </div>
 
@@ -15,7 +14,7 @@ export function ResourceCard({ icon, title, description, tags, href }) {
         {title}
       </h3>
 
-      {/* 3. Descripción (flex-grow hace que todas las cards tengan la misma altura) */}
+      {/* 3. Descripción  */}
       <p className="font-textos text-texto-gris mb-6 flex-grow">
         {description}
       </p>
