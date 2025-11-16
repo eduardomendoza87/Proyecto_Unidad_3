@@ -7,6 +7,7 @@ import MainLayout from '../Layouts/MainLayout';
 import Home from '../pages/Home';
 import { Recursos } from '../pages/Resources';
 import Glosario from '../pages/subPages/glossary';
+import Creditos from '../pages/Credits';
 
 const AppRoutes = () => {
     return(
@@ -17,6 +18,7 @@ const AppRoutes = () => {
             <Route index element={<Home/>}/>
             <Route path='/recursos' element={<Recursos/>}/>
             <Route path='/subPages/glosario' element={<Glosario/>}/>
+            <Route path='/creditos' element={<Creditos/>}/>
             </Route>
         </Routes>
         </BrowserRouter>

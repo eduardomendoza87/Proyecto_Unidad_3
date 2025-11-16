@@ -32,7 +32,7 @@ const allResources = [
     description: 'Video acerca de la Conversión de AFND a AFD paso a paso.',
     tags: ['Conversión', 'Video'],
     categoria: 'Videos',
-    href: '#', 
+    href: 'https://www.youtube.com/watch?v=hzJ8CNdPElc', 
   },
   {
     id: 4,
@@ -41,7 +41,7 @@ const allResources = [
     description: 'Una guía PDF con el algoritmo de minimización de estados.',
     tags: ['Minimización', 'Guía'],
     categoria: 'Guias',
-    href: '#', 
+    href: 'https://webdiis.unizar.es/asignaturas/TC/wp/wp-content/uploads/2012/09/121008MinimAFDs.pdf', 
   },
   {
     id: 5,
@@ -50,7 +50,7 @@ const allResources = [
     description: 'Artículo sobre el uso de Autómatas en compiladores y regex.',
     tags: ['Aplicaciones', 'Lectura'],
     categoria: 'Articulos y Lecturas',
-    href: '#', 
+    href: 'https://www.studocu.com/es-mx/document/instituto-politecnico-nacional/compiladores/articulo-compiladores/119544580', 
   },
 ];
 
