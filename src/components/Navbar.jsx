@@ -1,8 +1,10 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { Link } from 'react-router-dom'; // <--- 1. IMPORTA LINK
+
 // iconos
 import { Home, Book, Users, ChevronDown, Zap } from 'lucide-react';
 
-// array de subtemas
+//array de subtemas
 const subtemas = [
   { slug: '3.1', title: '3.1 Conceptos: Definición y Clasificación de Autómata Finito (AF).' },
   { slug: '3.2', title: '3.2 Conversión de un Autómata Finito No Determinista (AFND) a Autómata Finito Determinista (AFD).' },
@@ -12,23 +14,17 @@ const subtemas = [
 ];
 
 export function Navbar() {
-  // Estado para manejar la apertura del submenú
   const [isSubmenuOpen, setIsSubmenuOpen] = useState(false);
-
-  //Referencia al menú para detectar clics fuera
   const menuRef = useRef(null);
 
-  //Hook para cerrar el menú si se hace clic fuera
   useEffect(() => {
     function handleClickOutside(event) {
       if (menuRef.current && !menuRef.current.contains(event.target)) {
         setIsSubmenuOpen(false);
       }
     }
-    // Añadimos el listener
     document.addEventListener("mousedown", handleClickOutside);
     return () => {
-      // Limpiamos el listener
       document.removeEventListener("mousedown", handleClickOutside);
     };
   }, [menuRef]);
@@ -38,16 +34,16 @@ export function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           
-          {/*Título */}
-          <a href="#" className="font-titulos text-xl font-bold">
-            Unidad 3 – Autómatas Finitos
-          </a>
+          {/* Título  */}
+          <Link to="/" className="font-titulos text-xl font-bold">
+            Unidad 3 – Autómastas Finitos
+          </Link>
 
-          {/*Navegación*/}
+          {/* Navegación */}
           <div className="flex items-center gap-6">
             <div className="hidden md:flex items-center gap-6 font-textos">
               
-              {/*Menú Subtemas*/}
+              {/* Menú Subtemas */}
               <div className="relative" ref={menuRef}>
                 <button
                   onClick={() => setIsSubmenuOpen(!isSubmenuOpen)}
@@ -60,41 +56,41 @@ export function Navbar() {
                   />
                 </button>
                 
-                {/*Modal de Subtemas*/}
+                {/* Modal de Subtemas */}
                 {isSubmenuOpen && (
                   <div className="absolute -right-16 top-10 w-[600px] p-6 bg-blanco rounded-lg shadow-xl">
                     <div className="grid grid-cols-2 gap-4">
                       {subtemas.map((tema) => (
-                        <a
+                        <Link
                           key={tema.slug}
-                          href={`/tema/${tema.slug}`} 
+                          to={`/tema/${tema.slug}`} 
                           onClick={() => setIsSubmenuOpen(false)} 
                           className="block bg-fondo-oscuro text-blanco p-4 rounded-lg font-bold hover:bg-principal-hover transition-colors"
                         >
                           {tema.title}
-                        </a>
+                        </Link>
                       ))}
                     </div>
                   </div>
                 )}
               </div>
 
-              {/* 2. Links Estáticos  */}
-              <a href="/" className="flex items-center gap-2 hover:text-principal transition-colors">
+              {/* 2. Links  */}
+              <Link to="/" className="flex items-center gap-2 hover:text-principal transition-colors"> {/* <-- 4. CAMBIO AQUÍ */}
                 <Home size={18} /> Inicio
-              </a>
-              <a href="recursos" className="flex items-center gap-2 hover:text-principal transition-colors">
+              </Link>
+              <Link to="/recursos" className="flex items-center gap-2 hover:text-principal transition-colors"> {/* <-- 5. CAMBIO AQUÍ */}
                 <Book size={18} /> Recursos
-              </a>
-              <a href="#" className="flex items-center gap-2 hover:text-principal transition-colors">
+              </Link>
+              <Link to="/creditos" className="flex items-center gap-2 hover:text-principal transition-colors"> {/* <-- 6. CAMBIO AQUÍ (asumiendo que la ruta es /creditos) */}
                 <Users size={18} /> Créditos
-              </a>
+              </Link>
             </div>
 
-            {/* 3. Botón de Acción */}
-            <button className="bg-principal text-blanco font-bold py-2 px-4 rounded-lg hover:bg-principal-hover transition-colors flex items-center gap-2">
+            {/* 3. Botón de Acción  */}
+            <Link to="/subtemas" className="bg-principal text-blanco font-bold py-2 px-4 rounded-lg hover:bg-principal-hover transition-colors flex items-center gap-2"> {/* <-- 7. CAMBIO AQUÍ */}
               <Zap size={16} /> Explorar
-            </button>
+            </Link>
           </div>
         </div>
       </div>

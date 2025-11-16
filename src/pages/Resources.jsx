@@ -14,7 +14,7 @@ const allResources = [
     description: 'Herramienta visual para crear, probar y convertir autómatas finitos.',
     tags: ['Conversión', 'ER y AFND', 'Minimización'],
     categoria: 'Simuladores',
-    href: '#', 
+    href: 'https://www2.cs.duke.edu/csed/jflap/log/form.php',
   },
   {
     id: 2,
@@ -23,7 +23,7 @@ const allResources = [
     description: 'Listado de glosarios del tema 3.1 y 3.5. Palabras clave y definiciones.',
     tags: ['Conceptos', 'Aplicaciones'],
     categoria: 'Glosario',
-    href: '/glosario', 
+    href: '/subPages/glosario', 
   },
   {
     id: 3,
