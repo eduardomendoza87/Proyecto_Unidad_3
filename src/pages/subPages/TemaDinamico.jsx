@@ -6,6 +6,7 @@ import Tema1 from '../Tema1';
 import Tema2 from '../Tema2';
 import Tema3 from '../Tema3';
 import Tema4 from '../Tema4';
+import Tema5 from '../Tema5';
 
 
 const TemaDinamico = () => {

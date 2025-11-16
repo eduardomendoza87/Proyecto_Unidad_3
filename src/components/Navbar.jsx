@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Link } from 'react-router-dom'; // <--- 1. IMPORTA LINK
+import { Link } from 'react-router-dom'; 
 
 // iconos
 import { Home, Book, Users, ChevronDown, Zap } from 'lucide-react';
