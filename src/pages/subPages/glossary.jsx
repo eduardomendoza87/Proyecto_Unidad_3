@@ -71,11 +71,12 @@ const Glosario = () => {
           </div>
           {/*mi componente entrada de buscador*/}
           <div className="mb-6 max-w-lg mx-auto">
-            <SearchInput
-              value={searchTerm}
-              onChange={(e) => setSearchTerm(e.target.value)}
-            />
-          </div>
+  <SearchInput
+    value={searchTerm}
+    onChange={(e) => setSearchTerm(e.target.value)}
+    placeholder="Buscar término..." 
+  />
+</div>
         </div>
       </section>
 
