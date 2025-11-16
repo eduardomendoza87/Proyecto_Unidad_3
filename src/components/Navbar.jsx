@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom'; 
 
-// 1. IMPORTA LOS NUEVOS ICONOS
+// IMPORTA LOS NUEVOS ICONOS
 import { Home, Book, Users, ChevronDown, Menu, X } from 'lucide-react';
 
 //array de subtemas
@@ -15,7 +15,7 @@ const subtemas = [
 
 export function Navbar() {
   const [isSubmenuOpen, setIsSubmenuOpen] = useState(false);
-  // 2. AÑADE ESTADO PARA EL MENÚ MÓVIL
+  // AÑADE ESTADO PARA EL MENÚ MÓVIL
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   
   const menuRef = useRef(null);
@@ -32,10 +32,10 @@ export function Navbar() {
     };
   }, [menuRef]);
 
-  // Cierra el menú móvil si se cambia el tamaño de la ventana (buena práctica)
+  // Cierra el menú móvil si se cambia el tamaño de la ventana 
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth >= 768) { // 768px es el breakpoint 'md'
+      if (window.innerWidth >= 768) { 
         setIsMobileMenuOpen(false);
       }
     };
@@ -56,8 +56,7 @@ export function Navbar() {
           {/* Navegación */}
           <div className="flex items-center gap-6">
             
-            {/* --- 3. NAVEGACIÓN DE ESCRITORIO (Sin cambios) --- */}
-            {/* Esta es la que ya tenías, funciona perfecto en 'md' y más grandes */}
+            {/* --- 3. NAVEGACIÓN DE ESCRITORIO  */}
             <div className="hidden md:flex items-center gap-6 font-textos">
               {/* Menú Subtemas */}
               <div className="relative" ref={menuRef}>
@@ -75,7 +74,6 @@ export function Navbar() {
                 {/* Modal de Subtemas */}
                 {isSubmenuOpen && (
                   <div className="absolute -right-16 top-10 w-[600px] p-6 bg-blanco rounded-lg shadow-xl">
-                    {/* ... (Tu modal está perfecto, no se toca) ... */}
                     <div className="grid grid-cols-2 gap-4">
                       {subtemas.map((tema) => (
                         <Link
@@ -104,7 +102,7 @@ export function Navbar() {
               </Link>
             </div>
             
-            {/* --- 4. BOTÓN DE HAMBURGUESA (Solo en móvil) --- */}
+            {/* --- 4. BOTÓN DE HAMBURGUESA */}
             <div className="md:hidden">
               <button 
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -119,13 +117,9 @@ export function Navbar() {
       </div>
 
       {/* --- 5. MENÚ DESPLEGABLE MÓVIL --- */}
-      {/* Se muestra solo si isMobileMenuOpen es true, y se oculta en 'md' */}
       <div className={`md:hidden ${isMobileMenuOpen ? 'block' : 'hidden'}`}>
         <div className="px-4 pt-2 pb-4 flex flex-col gap-4 font-textos">
-          {/* * NOTA: Copiamos los mismos enlaces de arriba.
-            * Para el menú "Subtemas", lo simplificamos a un solo enlace
-            * que lleva al primer tema para no duplicar la lógica compleja del modal.
-          */}
+          
           <Link 
             to="/tema/3.1" // Llevamos al primer tema
             onClick={() => setIsMobileMenuOpen(false)}
