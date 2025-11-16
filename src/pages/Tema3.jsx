@@ -7,7 +7,7 @@ import Regla1Img from "../assets/Tema3/regla1-simbolo.webp";
 import Regla2Img from "../assets/Tema3/regla2-union.webp";
 import Regla3Img from "../assets/Tema3/regla3-concatenacion.webp";
 import Regla4Img from "../assets/Tema3/regla4-cierre.webp";
-import Portada_Video from "../assets/Tema3/Portada_Video_Tema_3.3.webp";
+import Portada_Video_Tema3 from "../assets/Tema3/Portada_Video_Tema_3.3.webp";
  
 const handleClick = ()=>{
 window.open('https://www.youtube.com/watch?v=2DC0nJwDQtM', '_blank')
@@ -101,7 +101,7 @@ const Tema3 = () => {
               Algoritmo de Thompson-Video informativo
             </h2>
             <img
-              src={Portada_Video}
+              src={Portada_Video_Tema3}
               alt="Video Algoritmo de Thompson"
               className="w-full h-auto rounded-lg shadow-md"
             />
