@@ -80,10 +80,10 @@ export function Navbar() {
               </div>
 
               {/* 2. Links Estáticos  */}
-              <a href="#" className="flex items-center gap-2 hover:text-principal transition-colors">
+              <a href="/" className="flex items-center gap-2 hover:text-principal transition-colors">
                 <Home size={18} /> Inicio
               </a>
-              <a href="#" className="flex items-center gap-2 hover:text-principal transition-colors">
+              <a href="recursos" className="flex items-center gap-2 hover:text-principal transition-colors">
                 <Book size={18} /> Recursos
               </a>
               <a href="#" className="flex items-center gap-2 hover:text-principal transition-colors">
