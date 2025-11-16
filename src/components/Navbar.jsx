@@ -87,10 +87,7 @@ export function Navbar() {
               </Link>
             </div>
 
-            {/* 3. Botón de Acción  */}
-            <Link to="/subtemas" className="bg-principal text-blanco font-bold py-2 px-4 rounded-lg hover:bg-principal-hover transition-colors flex items-center gap-2"> {/* <-- 7. CAMBIO AQUÍ */}
-              <Zap size={16} /> Explorar
-            </Link>
+            
           </div>
         </div>
       </div>

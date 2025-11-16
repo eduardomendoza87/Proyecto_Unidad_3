@@ -1,7 +1,6 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
-// CAMBIO AQUÍ: Importa el paquete que acabamos de instalar
 import tailwindcss from '@tailwindcss/postcss' 
 import autoprefixer from 'autoprefixer'
 

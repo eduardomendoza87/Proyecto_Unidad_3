@@ -2,16 +2,14 @@
 export default {
   content: [
     "./index.html",
-    "./src/**/*.{js,ts,jsx,tsx}", // Asegúrate de que vigile tus archivos de React
+    "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
     extend: {
-      // 1. Referenciamos las variables de fuente
       fontFamily: {
         'sans': 'var(--font-sans)',
         'display': 'var(--font-display)',
       },
-      // 2. Referenciamos las variables de color
       colors: {
         'brand': {
           DEFAULT: 'var(--color-brand)',
@@ -25,6 +23,6 @@ export default {
     },
   },
   plugins: [
-    require('@tailwindcss/typography'), // Plugin útil para los artículos
+    require('@tailwindcss/typography'), 
   ],
 }

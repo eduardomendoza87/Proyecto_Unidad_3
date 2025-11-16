@@ -131,7 +131,7 @@ const Home = () => {
             <div className="flex gap-4">
               {/* Botón Primario  */}
               <Link
-                to="/subtemas"
+                to="/tema/3.1"
                 className="bg-blanco text-principal font-bold py-3 px-6 rounded-lg transition-transform hover:scale-105"
               >
                 Explorar
@@ -233,7 +233,7 @@ const Home = () => {
       <SectionImagen>
         <div className="bg-blanco  py-20 px-8 max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center justify-center shadow-2xl rounded-lg ">
           <div className="flex flex-col justify-center">
-            <h2 className="text-2xl font-titulo text-texto-principal mb-6 text-start">
+            <h2 className="text-2xl font-titulos text-texto-principal mb-6 text-start">
               Aprende autómatas, domina la lógica
             </h2>
             <p className="font-textos font-normal mb-4 ">

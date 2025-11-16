@@ -2,6 +2,9 @@ import React from "react";
 // 1. IMPORTAMOS LOS ICONOS QUE NECESITAMOS
 import { Atom, Palette, Bolt, Wind, Smile } from 'lucide-react';
 
+//Fotos de perfil
+
+
 const Creditos = () => {
  
   //array de integrantes 
@@ -12,6 +15,7 @@ const Creditos = () => {
     {id:4 , foto:"", nombre:"Jeser Ovando Quiroga"},
     {id:5 , foto:"", nombre:"Jesus Emanuel Lopez Rodriguez"},
     {id:6 , foto:"", nombre:"Guillermo Arturo López Sánchez"},
+    {id:7 , foto:"", nombre:"Jesús Emiliano González Ross"},
   ]
 
   //  ARRAY DE ICONOS

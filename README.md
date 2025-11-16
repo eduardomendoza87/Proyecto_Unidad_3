@@ -1,16 +1,41 @@
-# React + Vite
+# 🤖 AutoLearn: Unidad 3 - Autómatas Finitos
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Un sitio web educativo interactivo diseñado para la materia de Lenguajes y Autómatas, enfocado en presentar de manera clara y profesional el contenido de la Unidad 3: Autómatas Finitos.
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## 🚀 Descripción del Proyecto
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+**AutoLearn** es una plataforma de aprendizaje (LMS) de una sola página (SPA) construida con un stack moderno. El objetivo es tomar el temario académico de la Unidad 3 y transformarlo en una experiencia de usuario (UX) atractiva, legible y fácil de navegar, siguiendo un diseño profesional creado en Figma.
 
-## Expanding the ESLint configuration
+El sitio cubre el ciclo de vida completo de los autómatas, desde su definición conceptual hasta su optimización y aplicación en el mundo real.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## ✨ Características Principales
+
+* **Diseño Profesional:** La interfaz fue diseñada primero en Figma, siguiendo principios de UX/UI modernos.
+* **Páginas Dinámicas:** Utiliza **React Router** para cargar dinámicamente el contenido de los 5 subtemas de la unidad.
+* **Sección de Recursos:** Un directorio de recursos curado con lógica de **filtrado de estado** en React para navegar por simuladores, videos, guías y más.
+* **Glosario Interactivo:** Un glosario con estado que incluye **búsqueda en vivo** y **filtrado por letra**.
+* **Componentes Reutilizables:** Construido con una arquitectura de componentes (Navbar, Footer, Cards) para un código limpio y mantenible.
+* **Totalmente Responsivo:** Diseñado con Mobile-First, asegurando una experiencia perfecta en teléfonos, tabletas y computadoras.
+
+---
+
+## 🛠️ Stack Tecnológico
+
+* **Frontend:** React 18
+* **Bundler:** Vite
+* **Estilos:** Tailwind CSS (con variables CSS y PostCSS)
+* **Ruteo:** React Router DOM v6
+* **Iconos:** Lucide React
+* **Diseño (UI/UX):** Figma
+* **Despliegue:** Vercel
+
+---
+
+## 📂 Estructura del Proyecto
+
+El proyecto sigue una arquitectura de componentes moderna para React.
