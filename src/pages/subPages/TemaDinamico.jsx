@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom';
 
 import Tema1 from '../Tema1';
 import Tema2 from '../Tema2';
+import Tema3 from '../Tema3';
 
 
 const TemaDinamico = () => {
