@@ -50,7 +50,7 @@ export function Navbar() {
           
           {/* Título  */}
           <Link to="/" className="font-titulos text-xl font-bold flex-shrink-0">
-            Unidad 3 – Autómastas Finitos
+            Unidad 3 – Autómatas Finitos
           </Link>
 
           {/* Navegación */}

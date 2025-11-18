@@ -39,3 +39,19 @@ El sitio cubre el ciclo de vida completo de los autómatas, desde su definición
 ## 📂 Estructura del Proyecto
 
 El proyecto sigue una arquitectura de componentes moderna para React.
+
+## 🏁 Instalación y Puesta en Marcha (Local)
+
+Este es un proyecto de Vite + React. Para ejecutarlo localmente, se requiere **Node.js** (v18 o superior).
+
+1.  **Requisito Previo:** Asegúrate de tener [Node.js](https://nodejs.org/) instalado.
+2.  **Abrir Terminal:** Abre una terminal o línea de comandos en la carpeta raíz del proyecto (donde está este `README`).
+3.  **Instalar Dependencias:** Ejecuta el siguiente comando. Esto descargará todas las bibliotecas que el proyecto necesita (React, Tailwind, etc.) en una carpeta `node_modules`.
+    ```bash
+    npm install
+    ```
+4.  **Ejecutar el Proyecto:** Una vez terminada la instalación, ejecuta el servidor de desarrollo:
+    ```bash
+    npm run dev
+    ```
+5.  **Abrir en el Navegador:** Abre la dirección URL que aparece en la terminal
