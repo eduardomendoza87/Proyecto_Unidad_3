@@ -9,9 +9,12 @@ import { Recursos } from '../pages/Resources';
 import Glosario from '../pages/subPages/glossary';
 import Creditos from '../pages/Credits';
 import TemaDinamico from '../pages/subPages/TemaDinamico';
+//componente
+import ScrollToTop from '../components/ScrollToTop';
 const AppRoutes = () => {
     return(
         <BrowserRouter>
+        <ScrollToTop/>
         <Routes>
             <Route path='/' element={<MainLayout/>}>
             {/*Rutas hijas*/}
@@ -23,6 +26,7 @@ const AppRoutes = () => {
 
             </Route>
         </Routes>
+        
         </BrowserRouter>
 
     );
