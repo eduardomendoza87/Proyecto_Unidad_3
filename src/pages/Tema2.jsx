@@ -31,7 +31,7 @@ const steps = [
 const Tema2 = () => {
   return (
     <>
-      {/* --- SECCIÓN HERO --- */}
+      {/* SECCIÓN HERO  */}
       <section className="bg-principal py-20 px-8">
         <div className="flex justify-center mb-8">
           <span className="bg-blanco text-principal font-bold py-3 px-6 rounded-lg text-lg shadow-lg">
@@ -67,7 +67,7 @@ const Tema2 = () => {
         </div>
       </section>
 
-      {/* --- SECCIÓN 2: LOS 5 PASOS (Algoritmo) --- */}
+      {/* SECCIÓN 2: LOS 5 PASOS  */}
       <section className="bg-blanco py-24 px-8">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">
@@ -94,7 +94,7 @@ const Tema2 = () => {
         </div>
       </section>
 
-      {/* --- SECCIÓN 3: TABLA DE TRANSICIÓN (Nuevo contenido teórico) --- */}
+      {/*  SECCIÓN 3: TABLA DE TRANSICIÓN  */}
       <section className="bg-fondo-claro py-20 px-8">
         <div className="max-w-5xl mx-auto">
             <h2 className="font-titulos text-3xl text-texto-principal font-bold mb-8 text-center">
@@ -133,7 +133,7 @@ const Tema2 = () => {
         </div>
       </section>
 
-      {/* --- SECCIÓN 4: VIDEO OFFLINE Y NAV --- */}
+      {/* SECCIÓN 4: VIDEO  */}
       <section className="bg-principal py-20 px-8">
         <div className="max-w-4xl mx-auto text-center">
             
@@ -141,7 +141,7 @@ const Tema2 = () => {
               Ejemplo Práctico Paso a Paso
             </h2>
             
-            {/* VIDEO PLAYER OFFLINE */}
+            {/* VIDEO */}
             <div className="mb-12 rounded-xl shadow-2xl overflow-hidden bg-black aspect-video">
                 <video 
                     controls 
