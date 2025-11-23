@@ -218,7 +218,7 @@ const Tema5 = () => {
             to="/creditos" 
             className="w-full md:w-auto bg-blanco text-principal font-bold py-4 px-8 rounded-lg shadow-lg transition-transform hover:scale-105 text-center"
           >
-            Finalizar Unidad 🎉
+            Finalizar Unidad
           </Link>
         </div>
       </section>
