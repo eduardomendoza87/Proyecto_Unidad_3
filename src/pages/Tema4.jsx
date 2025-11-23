@@ -1,84 +1,89 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import Portada_video from "../assets/Tema4/Portada_video_Tema_3.4.webp";
+// Video
+import VideoLocalTema4 from "../assets/videos/Video_Tema4.mp4"; 
 
-//  DATOS PARA LOS PASOS 
-
+// DATOS PARA LOS PASOS 
 const steps = [
   { 
     id: 1, 
-    text: "Grupo Inicial: Empezamos con dos grupos: Grupo 1 (todos los estados de No Aceptación) y Grupo 2 (todos los estados de Aceptación)." 
+    text: "Partición Inicial (P₀): Divide los estados del AFD en dos grandes grupos: Estados de Aceptación (F) y Estados de No-Aceptación (Q-F)." 
   },
   { 
     id: 2, 
-    text: "Iteración: Para cada grupo, revisamos: ¿Todos los estados en este grupo van al mismo grupo para cada símbolo del alfabeto?" 
+    text: "Análisis de Distinguibilidad: Para cada grupo actual, revisa si todos sus estados se comportan igual. ¿Al leer 'a' van al mismo grupo? ¿Al leer 'b' van al mismo grupo?" 
   },
   { 
     id: 3, 
-    text: "Si un estado A va al Grupo 1 y un estado B (en el mismo grupo que A) va al Grupo 2, entonces A y B no son equivalentes. Los separamos en nuevos grupos.." 
+    text: "Refinamiento (Pₖ₊₁): Si dos estados en el mismo grupo van a grupos diferentes con la misma entrada, son 'distinguibles'. Debemos partir el grupo para separarlos." 
   },
   { 
     id: 4, 
-    text: "Repetimos el paso 3 hasta que no podamos separar más grupos." 
+    text: "Iteración: Repite el proceso de refinamiento hasta que una iteración no produzca nuevos grupos (Pₖ = Pₖ₊₁)." 
   },
   { 
     id: 5, 
-    text: "Los grupos que quedan son los estados del nuevo AFD minimizado." 
+    text: "Construcción Final: Cada grupo restante se convierte en un único estado en el AFD Mínimo." 
   }
 ];
 
-const handleClick = ()=>{
-window.open('https://www.youtube.com/watch?v=gd6uyNXsqcw', '_blank')
-}
 const Tema4 = () => {
   return (
     <>
-      {/*  SECCIÓN HERO Y CONCEPTO */}
+      {/*  SECCIÓN 1: HERO  */}
       <section className="bg-principal py-20 px-8">
-        {/* Badge 3.2 */}
         <div className="flex justify-center mb-8">
-          <span className="bg-blanco text-principal font-bold py-3 px-6 rounded-lg text-lg">
+          <span className="bg-blanco text-principal font-bold py-3 px-6 rounded-lg text-lg shadow-lg">
             3.4
           </span>
         </div>
 
-        {/* Título y Subtítulo */}
         <div className="max-w-4xl mx-auto text-center mb-16">
           <h1 className="font-titulos text-5xl text-blanco font-bold mb-6">
             Minimización de Estados
           </h1>
-          <p className="font-textos text-lg text-blanco font-normal">
-            Aprende a optimizar Autómatas Finitos Deterministas (AFD) para crear la máquina más eficiente posible.
+          <p className="font-textos text-lg text-blanco font-normal max-w-2xl mx-auto">
+            Un AFD puede ser correcto pero ineficiente. Aprende a eliminar la redundancia para obtener el autómata <strong>óptimo y único</strong> para un lenguaje dado.
           </p>
         </div>
 
-        {/* Grid: Concepto a la Práctica */}
-        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-          <h2 className="font-titulos text-4xl text-blanco font-bold text-center md:text-left">
-            Eficiencia es la Clave
-          </h2>
-          {/* Card Blanca */}
-          <div className="bg-blanco p-8 rounded-lg shadow-xl">
+        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+          <div className="text-center md:text-left">
+            <h2 className="font-titulos text-4xl text-blanco font-bold mb-4">
+              Eficiencia es la Clave
+            </h2>
+            <p className="font-textos text-blanco text-lg">
+                En la vida real (compiladores, hardware), cada estado consume memoria. La minimización reduce el costo computacional sin cambiar la lógica.
+            </p>
+          </div>
+          
+          <div className="bg-blanco p-8 rounded-lg shadow-xl border-l-8 border-fondo-oscuro">
             <p className="font-textos text-texto-principal text-lg">
-             Después de convertir un AFND a un AFD, a menudo obtenemos un autómata con 'estados redundantes' (estados que hacen exactamente lo mismo). La minimización es un proceso para encontrar y fusionar estos estados. El resultado es el único AFD con el número mínimo de estados para ese lenguaje, lo cual es crucial para el rendimiento en compiladores y analizadores.
+              <strong>Teorema de Myhill-Nerode:</strong> Existe un único AFD mínimo (salvo isomorfismos) para cualquier lenguaje regular. Si dos autómatas mínimos aceptan lo mismo, son estructuralmente idénticos.
             </p>
           </div>
         </div>
       </section>
 
-      {/* SECCIÓN 2: LOS 5 PASOS */}
-      <section className="bg-blanco py-20 px-8">
-        <div className="max-w-3xl mx-auto">
-          {/* Mapeamos el array de pasos */}
-          <div className="space-y-8">
+      {/*SECCIÓN 2: EL ALGORITMO */}
+      <section className="bg-blanco py-24 px-8">
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="font-titulos text-4xl text-texto-principal font-bold mb-4">
+                El Método de las Particiones
+            </h2>
+            <p className="text-lg text-texto-gris">
+                Buscamos estados "equivalentes". Dos estados son equivalentes si no hay forma de distinguirlos leyendo cualquier cadena de entrada.
+            </p>
+          </div>
+
+          <div className="space-y-6">
             {steps.map((step) => (
-              <div key={step.id} className="flex items-center gap-6">
-                {/* Círculo Naranja */}
-                <div className="flex-shrink-0 w-16 h-16 flex items-center justify-center border-4 border-principal rounded-full text-principal font-titulos text-3xl font-bold">
+              <div key={step.id} className="flex items-start gap-6 bg-fondo-claro p-6 rounded-xl shadow-sm border border-principal/10 hover:border-principal/30 transition-colors">
+                <div className="flex-shrink-0 w-10 h-10 flex items-center justify-center bg-principal text-blanco rounded-full font-bold shadow-sm">
                   {step.id}
                 </div>
-                {/* Texto del paso */}
                 <p className="font-textos text-texto-principal text-lg">
                   {step.text}
                 </p>
@@ -88,62 +93,54 @@ const Tema4 = () => {
         </div>
       </section>
 
-      {/* SECCIÓN 3: VIDEO, CONCEPTO CLAVE Y NAV  */}
+      {/* SECCIÓN 3: VIDEO OFFLINE Y NAV  */}
       <section className="bg-principal py-20 px-8">
         <div className="max-w-4xl mx-auto text-center">
-          {/* Título de Ejemplo Práctico */}
-          <h2 className="font-titulos text-5xl text-blanco font-bold mb-8">
+          
+          <h2 className="font-titulos text-5xl text-blanco font-bold mb-4">
             Ejemplo Práctico de Minimización
           </h2>
-          <p className="font-textos text-xl text-blanco font-normal mb-6">El proceso de agrupar y separar estados es mucho más fácil de entender visualmente. Este video te guía a través de un ejemplo completo.</p>
+          <p className="font-textos text-xl text-blanco/90 font-normal mb-10">
+            Veremos cómo reducir un autómata complejo usando una tabla de particiones.
+          </p>
 
-          {/* Portada del Video */}
-          <div className="mb-8 rounded-lg shadow-xl overflow-hidden">
-            <img
-              src={Portada_video}
-              alt="Video Minimazion de estados"
-              className="w-full h-auto"
-            />
+          {/* VIDEO PLAYER OFFLINE */}
+          <div className="bg-black rounded-xl shadow-2xl overflow-hidden aspect-video mb-16">
+            <video 
+                controls 
+                width="100%" 
+                height="100%"
+                className="w-full h-full object-cover"
+            >
+                <source src={VideoLocalTema4} type="video/mp4" />
+                Tu navegador no soporta la etiqueta de video.
+            </video>
           </div>
 
-          {/* Botón "Ver Video"  */}
-          <button
-            onClick={handleClick}
-            className="bg-blanco text-principal font-bold py-3 px-6 rounded-lg transition-transform hover:scale-105 text-lg mb-20"
-          >
-            Ver video
-          </button>
-
-          {/* Título de Concepto Clave */}
-          <h2 className="font-titulos text-4xl text-blanco font-bold mb-8">
-            Concepto clave
+          <h2 className="font-titulos text-3xl text-blanco font-bold mb-6">
+            Concepto Clave
           </h2>
-
-          {/* Card Blanca de Concepto */}
-          <div className="bg-blanco p-8 rounded-lg shadow-xl max-w-2xl mx-auto mb-16">
+          
+          <div className="bg-blanco p-6 rounded-lg shadow-lg max-w-2xl mx-auto mb-16">
             <p className="font-textos text-texto-principal text-lg">
-              Cada estado en el nuevo AFD corresponde a un conjunto de estados
-              del AFND original. Este proceso elimina sistemáticamente la
-              ambigüedad y las transiciones epsilon.
+              "Si dos estados van a los mismos grupos con las mismas entradas, son indistinguibles. ¡Fusiónalos!"
             </p>
           </div>
 
-          {/* Navegación de Temas */}
-          <div className="flex items-center justify-center gap-6">
-            {/* Boton volver */}
+          {/* Navegación */}
+          <div className="flex flex-col md:flex-row items-center justify-center gap-6">
             <Link
               to="/tema/3.3"
-              className="border-2 border-blanco text-blanco font-bold py-3 px-6 rounded-lg transition-transform hover:scale-105"
+              className="w-full md:w-auto border-2 border-blanco text-blanco font-bold py-4 px-8 rounded-lg transition-transform hover:bg-blanco hover:text-principal"
             >
-              Volver a tema anterior
+              ← Volver al Tema 3.3
             </Link>
 
-            {/* Botón Siguiente */}
             <Link
               to="/tema/3.5"
-              className="bg-blanco text-principal font-bold py-3 px-6 rounded-lg transition-transform hover:scale-105"
+              className="w-full md:w-auto bg-blanco text-principal font-bold py-4 px-8 rounded-lg shadow-lg transition-transform hover:scale-105"
             >
-              Siguiente tema
+              Siguiente Tema: Aplicaciones →
             </Link>
           </div>
         </div>
